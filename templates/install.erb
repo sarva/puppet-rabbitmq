@@ -1,0 +1,12 @@
+wget http://www.rabbitmq.com/releases/rabbitmq-server/v<%= ver %>/rabbitmq-server_<%= ver %>-1_all.deb
+
+# use dpkg -i to install. may fail with missing dependencies
+dpkg -i rabbitmq-server_<%= ver %>-1_all.deb #1>/dev/null 2>/dev/null
+
+if [ "$?" -ne 0 ]
+then
+  apt-get -f --yes install #1>/dev/null 2>/dev/null
+fi
+
+test -d /usr/lib/rabbitmq/lib/rabbitmq_server-<%= ver %>
+exit $?

@@ -1,0 +1,18 @@
+= Rabbitmq Puppet module =
+
+Manually install debian/ubuntu packages from rabbitmq.org and run the
+latest (or specific) rabbitmq version along with some standard plugins
+
+Plugins installed:
+
+* mochiweb
+* webmachine
+* amqp_client
+* rabbitmq-mochiweb
+* rabbitmq-management-agent
+* rabbitmq-management
+
+
+== Usage ==
+
+  include rabbitmq
