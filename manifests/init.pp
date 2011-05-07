@@ -1,5 +1,9 @@
 class rabbitmq {
-  $ver = $rabbitmqversion
+  if $rabbitversion {
+    $ver = $rabbitmqversion
+  } else {
+    $ver = "2.4.1"
+  }
   $plugins = ["mochiweb", "webmachine", "amqp_client", "rabbitmq-mochiweb", "rabbitmq-management-agent", "rabbitmq-management"]
 
   exec { "install-rabbitmq":
